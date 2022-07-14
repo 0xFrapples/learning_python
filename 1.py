@@ -3,6 +3,7 @@ b=int(input("Enter the second number: "))
 
 def larger_number():
     if a > b:
-        print ("true")
+        print (a)
     else:
-        print ("false")
+        print (b)
+larger_number()
