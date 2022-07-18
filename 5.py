@@ -20,9 +20,6 @@ def countdown():
     
     if time_d < 0 or time_h < 0 or time_m < 0 or time_s < 0:
         invalidval()
-        
-    # Summary time to count down
-    time_total = time_s + time_m * 60 + time_h * 3600 + time_d * 86400
     
     # Counting down Function
     def count(time_d, time_h, time_m, time_s):
