@@ -33,6 +33,7 @@ def countdown():
             time.sleep(1)
             return count(time_total)
         else:
+            os.system('clear')
             print("Finished!")
             exit()
     count(time_total)
