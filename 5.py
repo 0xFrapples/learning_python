@@ -27,7 +27,7 @@ def countdown():
     # Counting down Function
     def count(time_total):
         if time_total != 0:
-            os.system('cls' if os.name == 'nt' else 'clear')
+            os.system('cls' if os.name == 'nt' else 'clear') # cls executed if using Windows, executing clear otherwise
             print(time_total)
             time_total -= 1
             time.sleep(1)
