@@ -27,13 +27,13 @@ def countdown():
     # Counting down Function
     def count(time_total):
         if time_total != 0:
-            os.system('clear')
+            os.system('cls' if os.name == 'nt' else 'clear')
             print(time_total)
             time_total -= 1
             time.sleep(1)
             return count(time_total)
         else:
-            os.system('clear')
+            os.system('cls' if os.name == 'nt' else 'clear')
             print("Finished!")
             exit()
     count(time_total)
