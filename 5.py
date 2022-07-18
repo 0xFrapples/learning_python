@@ -1,3 +1,4 @@
+import os
 import time    
 
 # Countdown function
@@ -26,6 +27,7 @@ def countdown():
     # Counting down Function
     def count(time_total):
         if time_total != 0:
+            os.system('clear')
             print(time_total)
             time_total -= 1
             time.sleep(1)
