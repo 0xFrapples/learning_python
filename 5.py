@@ -25,17 +25,35 @@ def countdown():
     time_total = time_s + time_m * 60 + time_h * 3600 + time_d * 86400
     
     # Counting down Function
-    def count(time_total):
-        if time_total != 0:
-            os.system('cls' if os.name == 'nt' else 'clear') # cls executed if using Windows, executing clear otherwise
-            print(time_total)
-            time_total -= 1
-            time.sleep(1)
-            return count(time_total)
+    def count(time_d, time_h, time_m, time_s):
+        os.system('cls' if os.name == 'nt' else 'clear')
+        print(time_d,'d ',time_h,'h ',time_m,'m ',time_s,'s ')
+        time.sleep(1)
+        if time_s != 0:
+            time_s -= 1
+            return count(time_d, time_h, time_m, time_s)
         else:
-            os.system('cls' if os.name == 'nt' else 'clear')
-            print("Finished!")
-            exit()
-    count(time_total)
+            if time_m != 0:
+                time_m -= 1
+                time_s += 59
+                return count(time_d, time_h, time_m, time_s)
+            else:
+                if time_h != 0:
+                    time_h -= 1
+                    time_m += 59
+                    time_s += 59
+                    return count(time_d, time_h, time_m, time_s)
+                else:
+                    if time_d != 0:
+                        time_d -= 1
+                        time_h += 23
+                        time_m += 59
+                        time_s += 59
+                        return count(time_d, time_h, time_m, time_s)
+                    else:
+                        print("Finished!")
+                        exit()
+                        
+    count(time_d, time_h, time_m, time_s)
 
 countdown()
