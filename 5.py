@@ -17,7 +17,7 @@ def countdown():
     except ValueError:
         invalidval()
     
-    if time_d or time_h or time_m or time_s < 0:
+    if time_d < 0 or time_h < 0 or time_m < 0 or time_s < 0:
         invalidval()
         
     # Summary time to count down
