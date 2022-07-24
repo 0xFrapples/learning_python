@@ -12,9 +12,9 @@ def height():
     
     b = 2 # amount of hashes to print at the first ln
     def pyramid(h, b):
-        a = h-1
+        a = h-1 # amount of spaces to print at the first ln
         while h>0:
-            print(f' '*a, '#'*b)
+            print(f' '*a, '#'*b) # prints space 'a' times and hash 'b' times
             h -= 1
             a -= 1
             b += 1
