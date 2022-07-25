@@ -29,27 +29,24 @@ def countdown():
         if time_s > 0:
             time_s -= 1
             return count(time_d, time_h, time_m, time_s)
+        elif time_m > 0:
+            time_m -= 1
+            time_s += 59
+            return count(time_d, time_h, time_m, time_s)
+        elif time_h > 0:
+            time_h -= 1
+            time_m += 59
+            time_s += 59
+            return count(time_d, time_h, time_m, time_s)
+        elif time_d > 0:
+            time_d -= 1
+            time_h += 23
+            time_m += 59
+            time_s += 59
+            return count(time_d, time_h, time_m, time_s)
         else:
-            if time_m > 0:
-                time_m -= 1
-                time_s += 59
-                return count(time_d, time_h, time_m, time_s)
-            else:
-                if time_h > 0:
-                    time_h -= 1
-                    time_m += 59
-                    time_s += 59
-                    return count(time_d, time_h, time_m, time_s)
-                else:
-                    if time_d > 0:
-                        time_d -= 1
-                        time_h += 23
-                        time_m += 59
-                        time_s += 59
-                        return count(time_d, time_h, time_m, time_s)
-                    else:
-                        print("Finished!")
-                        exit()
+            print("Finished!")
+            exit()
                         
     count(time_d, time_h, time_m, time_s)
 
